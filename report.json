@@ -1,0 +1,27 @@
+{
+  "artifact_id": "clean_data_v1",
+  "lineage": [
+    {
+      "run_metadata": {
+        "run_id": "clean_job_001",
+        "created_at": "2026-03-03T22:25:00.343585+00:00",
+        "description": "Cleaned raw data",
+        "code_version": "v1.0.0"
+      },
+      "upstream_inputs": [
+        "raw_data_v1"
+      ]
+    }
+  ],
+  "scraping_signals": [
+    {
+      "dataset_id": "raw_data_v1",
+      "domain": "example.com",
+      "fetched_at": "2026-03-03T22:25:00.268051+00:00",
+      "has_robots_txt": false,
+      "has_llms_txt": false,
+      "robots_txt_preview": null,
+      "llms_txt_preview": null
+    }
+  ]
+}
