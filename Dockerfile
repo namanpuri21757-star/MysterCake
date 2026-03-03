@@ -12,21 +12,21 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy package files and install Node dependencies
+# Copy package files first for faster building
 COPY package*.json ./
 RUN npm install
 
-# Copy Python requirements and install them
+# Copy Python requirements
 COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt --break-system-packages
 
-# Copy the rest of the application
+# Copy EVERYTHING else (including the src folder)
 COPY . .
 
 # Build the React frontend
 RUN npm run build
 
-# Expose the port the app runs on
+# Expose the port
 EXPOSE 3000
 
 # Start the application
